@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Landing Page</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"
+          onload="AOS.init({ duration: 800, easing: 'ease-in-out', once: true });"></script>
+
+  <!-- Hover.css -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" rel="stylesheet">
+
+  <!-- SweetAlert2 -->
+  <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- Typed.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <meta name="description" content="Landing page profesional de Cristian Maida: desarrollo web, análisis de datos y documentación técnica bilingüe.">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      padding-top: 70px;
+    }
+
+    .navbar-nav .nav-link {
+      color: white;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      padding: 15px 25px;
+    }
+
+    .navbar-nav .nav-link:hover {
+      background-color: #4682B4;
+    }
+
+    header {
+      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+
+    header h1 {
+      font-size: 48px;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    }
+
+    .card.tarjeta {
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card.tarjeta:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    section {
+      scroll-margin-top: 80px;
+    }
+
+    #testimonios blockquote {
+      background-color: #f0f8ff;
+      border-left: 5px solid #1E90FF;
+      margin: 20px 0;
+      padding: 15px;
+      font-style: italic;
+      border-radius: 5px;
+    }
+
+    #testimonios footer {
+      text-align: right;
+      font-weight: bold;
+      margin-top: 10px;
+      color: #1E90FF;
+    }
+
+    footer {
+      background-color: #222;
+      color: #ccc;
+      padding: 20px 0;
+    }
+    .btn-primary {
+      transition: background-color 0.3s ease;
+    }
+    .btn-primary:hover {
+      filter: brightness(1.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" role="navigation">
+    <div class="container">
+      <a class="navbar-brand" href="#">MiLanding</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Inicio -->
+  <header id="inicio" data-aos="fade-in">
+    <div class="container">
+      <h1 id="typed" class="fw-bold text-white" style="min-height: 60px;"></h1>
+      <p class="lead text-white">
+        Soluciones modernas en desarrollo web, análisis de datos y documentación técnica bilingüe.
+      </p>
+      
+      <a href="#servicios">
+        <button class="btn btn-success hvr-float-shadow" aria-label="Comenzar">Comenzar</button>
+      </a>
+    </div>
+  </header>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const typed = new Typed("#typed", {
+        strings: ["Diseño y desarrollo web profesional"],
+        typeSpeed: 50,
+        backSpeed: 0,
+        loop: false,
+        showCursor: false,
+        onComplete: function () {
+          document.getElementById("typed").innerHTML = "Diseño y desarrollo web profesional";
+        }
+      });
+    });
+  </script>
+
+  <!-- Servicios -->
+  <section id="servicios" class="container my-5 pt-5 border-top" data-aos="fade-up">
+    <h2 class="text-center mb-4">Servicios Profesionales</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card tarjeta h-100 hvr-grow text-center">
+          <div class="card-body">
+            <h5 class="card-title">Desarrollo Web</h5>
+            <p class="card-text">Sitios modernos, responsivos y optimizados para experiencia de usuario.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card tarjeta h-100 hvr-grow text-center">
+          <div class="card-body">
+            <h5 class="card-title">Análisis de Datos</h5>
+            <p class="card-text">Procesamiento, visualización y extracción de insights estratégicos.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card tarjeta h-100 hvr-grow text-center">
+          <div class="card-body">
+            <h5 class="card-title">Documentación Técnica</h5>
+            <p class="card-text">Redacción clara y bilingüe para proyectos, manuales y entregables técnicos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section id="testimonios" class="container my-5 pt-5 border-top" data-aos="fade-up">
+    <h2 class="text-center mb-4">Testimonios</h2>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="col-md-6 text-start">
+        <blockquote class="blockquote">
+          <p>"Excelente atención y resultados rápidos."</p>
+          <footer class="blockquote-footer">Cliente A</footer>
+        </blockquote>
+      </div>
+      <div class="col-md-6 text-end">
+        <blockquote class="blockquote">
+          <p>"Muy profesional y confiable."</p>
+          <footer class="blockquote-footer">Cliente B</footer>
+        </blockquote>
+      </div>
+      <div class="col-md-6 text-end">
+        <blockquote>
+          <p>"Cristian tiene una forma clara y precisa de explicar conceptos complejos. Aprendí más en sus clases que en semanas de estudio autodidacta."</p>
+          <footer>— Alumno de Coderhouse</footer>
+        </blockquote>
+      </div>
+      <div class="col-md-6 text-end">
+        <blockquote>
+          <p>"Su enfoque en documentación bilingüe y estándares internacionales nos permitió presentar proyectos con impacto global."</p>
+          <footer>— Colaborador técnico</footer>
+        </blockquote>
+      </div>
+      <div class="col-md-6 text-end">
+        <blockquote>
+          <p>"La forma en que Cristian conecta teoría con práctica es única. Su trabajo en urbanismo digital nos inspiró a aplicar tecnología con propósito."</p>
+          <footer>— Coordinador de proyecto ambiental</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="container my-5 pt-5 border-top" data-aos="fade-up">
+    <h2 class="text-center mb-4">Contacto</h2>
+    <form class="row justify-content-center needs-validation" id="formulario" role="form" novalidate>
+      <div class="col-12 col-md-6">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" placeholder="Tu nombre" required aria-label="Nombre">
+          <div class="valid-feedback">¡Perfecto!</div>
+          <div class="invalid-feedback">Por favor ingresá tu nombre.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="tu@email.com" required aria-label="Email">
+        </div>
+        <div class="mb-3">
+          <label for="mensaje" class="form-label">Mensaje</label>
+          <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribí tu mensaje..." required aria-label="Mensaje"></textarea>
+        </div>
+        <div class="d-flex justify-content-between">
+          <button type="submit" class="btn btn-primary hvr-float-shadow" aria-label="Enviar formulario">Enviar</button>
+          <button type="reset" class="btn btn-secondary hvr-buzz-out" aria-label="Borrar formulario">Borrar</button>
+        </div>
+      </div>
+    </form>
+    <p class="text-muted fs-5 text-center">Podés escribirme a <strong>cristianmaida@outlook.com</strong> para consultas profesionales, colaboraciones o propuestas académicas.</p>
+    <p class="text-muted fs-5 text-center">También podés seguirme en mi canal de YouTube donde comparto tutoriales sobre desarrollo web y buenas prácticas técnicas.</p>
+    <p class="text-muted fs-5 text-center">Estoy disponible para mentorías, clases particulares y asesoramiento en proyectos que involucren programación, documentación o análisis de datos.</p>
+    <p class="text-muted fs-5 text-center">Si querés ver mi trabajo, podés visitar mi perfil en GitHub o conectarte por LinkedIn.</p>
+    <p class="text-muted fs-5 text-center">Gracias por visitar mi sitio. Estoy siempre abierto a nuevas ideas y desafíos que generen impacto real.</p>
+    <div class="text-center">
+      <a href="https://github.com/CristianEstMaida" target="_blank" class="btn btn-outline-primary m-1 hvr-float-shadow">GitHub</a>
+      <a href="https://www.linkedin.com/in/cristian-esteban-maida" target="_blank" class="btn btn-outline-primary m-1 hvr-float-shadow">LinkedIn</a>
+      <a href="https://www.youtube.com/@cristianestebanmaida" target="_blank" class="btn btn-outline-primary m-1 hvr-float-shadow">YouTube</a>
+    </div>
+
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <div class="container">
+      <p>© 2025 MiLanding. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      'use strict';
+      const form = document.querySelector('.needs-validation');
+      form.addEventListener('submit', function (e) {
+        if (!form.checkValidity()) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    })();
+  </script>
+
+
+  <!-- SweetAlert2 -->
+  <script>
+    document.getElementById("formulario").addEventListener("submit", function(e) {
+      e.preventDefault();
+      Swal.fire({
+        title: "Mensaje enviado",
+        text: "Gracias por contactarte. Te responderemos pronto.",
+        icon: "success",
+        confirmButtonText: "Cerrar"
+      });
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
