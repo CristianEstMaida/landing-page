@@ -132,7 +132,10 @@
       </p>
       
       <a href="#servicios">
-        <button class="btn btn-success hvr-float-shadow" aria-label="Comenzar">Comenzar</button>
+        <button class="btn btn-success hvr-float-shadow me-2" aria-label="Ver servicios">Comenzar</button>
+      </a>
+      <a href="#contacto">
+        <button class="btn btn-outline-light hvr-float-shadow" aria-label="Ir a contacto">Contactame</button>
       </a>
     </div>
   </header>
@@ -252,13 +255,17 @@
     <p class="text-muted fs-5 text-center">Si querés ver mi trabajo, podés visitar mi perfil en GitHub o conectarte por LinkedIn.</p>
     <p class="text-muted fs-5 text-center">Gracias por visitar mi sitio. Estoy siempre abierto a nuevas ideas y desafíos que generen impacto real.</p>
     <div class="text-center">
+      
       <a href="https://github.com/CristianEstMaida" target="_blank" class="btn btn-outline-primary m-1 hvr-float-shadow">GitHub</a>
       <a href="https://www.linkedin.com/in/cristian-esteban-maida" target="_blank" class="btn btn-outline-primary m-1 hvr-float-shadow">LinkedIn</a>
       <a href="https://www.youtube.com/@cristianestebanmaida" target="_blank" class="btn btn-outline-primary m-1 hvr-float-shadow">YouTube</a>
     </div>
-
-
+    <div class="text-center my-3">
+      <p class="fs-5">Correo: <span id="correo">cristianmaida@outlook.com</span></p>
+      <button class="btn btn-outline-primary hvr-float-shadow" onclick="copiarCorreo()">Copiar correo</button>
+    </div>
   </section>
+
 
   <!-- Footer -->
   <footer class="text-center">
@@ -294,6 +301,27 @@
       });
       this.reset();
     });
+  </script>
+
+  <script>
+    function copiarCorreo() {
+      const correo = document.getElementById("correo").innerText;
+      navigator.clipboard.writeText(correo).then(() => {
+        Swal.fire({
+          title: "¡Copiado!",
+          text: "El correo fue copiado al portapapeles.",
+          icon: "success",
+          confirmButtonText: "Cerrar"
+        });
+      }).catch(() => {
+        Swal.fire({
+          title: "Error",
+          text: "No se pudo copiar el correo.",
+          icon: "error",
+          confirmButtonText: "Cerrar"
+        });
+      });
+    }
   </script>
 
 </body>
