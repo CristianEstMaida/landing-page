@@ -276,7 +276,14 @@
       <p>© 2025 MiLanding. Todos los derechos reservados.</p>
     </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   
+  <script>
+    (function(){
+      emailjs.init("CYS0VPBDEotYw_zMW"); // reemplazá con tu public key
+    })();
+  </script> 
   <!-- SweetAlert2 -->
   <script>
     (() => {
@@ -294,18 +301,39 @@
 
         form.classList.add('was-validated'); 
 
+        // Datos que se mandan al template de EmailJS
+    const datos = {
+      to_name: "Administrador", // nombre fijo del receptor
+      to_email: "cristianmaida@outlook.com", // destinatario fijo
+      reply_to: document.getElementById("email").value,
+      from_name: document.getElementById("nombre").value,
+      from_email: document.getElementById("email").value,
+      message: document.getElementById("mensaje").value
+    };
+
+    // Enviar con EmailJS
+    emailjs.send("service_ceduu8q", "template_vwi1j3c", datos)
+      .then(() => {
         Swal.fire({
           title: "Mensaje enviado",
           text: "Gracias por contactarte. Te responderemos pronto.",
           icon: "success",
           confirmButtonText: "Cerrar"
         });
-
         form.reset(); 
         form.classList.remove('was-validated'); 
-      }, false);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        Swal.fire({
+          title: "Error",
+          text: "No se pudo enviar el mensaje.",
+          icon: "error"
+        });
+      });
+    }, false);
 
-      form.addEventListener('reset', function () {
+    form.addEventListener('reset', function () {
         this.classList.remove("was-validated");
       });
     })();
@@ -332,3 +360,4 @@
   </script>
 </body>
 </html>
+
